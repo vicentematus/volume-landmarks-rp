@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "sqlite"
+    url      = env("DATABASE_URL")
+}
+
+model MuscleGroup {
+    id          Int         @id @default(autoincrement())
+    muscle      String      @unique
+    MV_MIN      Int
+    MV_MAX      Int
+    MEV_MIN     Int
+    MEV_MAX     Int
+    MAV_MIN     Int
+    MAV_MAX     Int
+    MRV_MIN     Int
+    MRV_MAX     Int
+    frequency   String?
+    article_url String?
+    excercises  Excercise[]
+}
+
+model Excercise {
+    id            Int          @id @default(autoincrement())
+    MuscleGroup   MuscleGroup? @relation(fields: [muscleGroupId], references: [id])
+    muscleGroupId Int?
+    name          String
+    url           String
+}
