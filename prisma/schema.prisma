@@ -13,6 +13,7 @@ datasource db {
 model MuscleGroup {
     id          Int         @id @default(autoincrement())
     muscle      String      @unique
+    description String  @default("N/A")
     MV_MIN      Int
     MV_MAX      Int
     MEV_MIN     Int
@@ -39,5 +40,5 @@ model Image {
     id            Int          @id @default(autoincrement())
     MuscleGroup   MuscleGroup? @relation(fields: [muscleGroupId], references: [id])
     muscleGroupId Int?
-    path String 
+    path          String
 }
