@@ -23,4 +23,7 @@ export default defineNextConfig({
     locales: ["en"],
     defaultLocale: "en",
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 });
