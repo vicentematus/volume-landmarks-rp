@@ -1,4 +1,6 @@
 import Table from "@/components/table/Table";
+
+import MuscleCard from "@/components/list/muscle-groups/index";
 import type {
   GetServerSideProps,
   NextPage,
@@ -17,10 +19,26 @@ const Home: any = ({ muscleGroups }) => {
       </Head>
 
       <main className="container mx-auto flex flex-col items-center justify-center min-h-screen p-4">
-        <h1 className="text-5xl md:text-[5rem] leading-normal font-extrabold text-gray-700">
-          Create <span className="text-purple-300">T3</span> App
+        <h1 className="text-5xl  leading-normal font-extrabold ">
+          Reinassance Periodization Volume Landmarks
         </h1>
-        <Table muscleGroups={muscleGroups} />
+        <div className="grid grid-cols-12 justify-center items-center gap-4">
+          {muscleGroups.map((muscle) => (
+            <MuscleCard muscle={muscle} />
+          ))}
+        </div>
+        <div className="card card-compact w-96 bg-base-100 shadow-xl">
+          <figure>
+            <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">Shoes!</h2>
+            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <div className="card-actions justify-end">
+              <button className="btn btn-primary">Buy Now</button>
+            </div>
+          </div>
+        </div>
       </main>
     </>
   );

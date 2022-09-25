@@ -24,6 +24,7 @@ model MuscleGroup {
     frequency   String?
     article_url String?
     excercises  Excercise[]
+    images      Image[]
 }
 
 model Excercise {
@@ -32,4 +33,11 @@ model Excercise {
     muscleGroupId Int?
     name          String
     url           String
+}
+
+model Image {
+    id            Int          @id @default(autoincrement())
+    MuscleGroup   MuscleGroup? @relation(fields: [muscleGroupId], references: [id])
+    muscleGroupId Int?
+    path String 
 }
