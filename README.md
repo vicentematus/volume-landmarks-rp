@@ -4,11 +4,11 @@ This is an app bootstrapped according to the [init.tips](https://init.tips) stac
 
 # To Do List
 
-- [ ] Fix the values from RP
+- [ ] Seed the Excercise table with excercises for each muscle group from the RP website.
+- [ ] Improve the chart
 - [ ] Fix Typescript typos (still learning how to fetch and add types to it with Next.js ...)
 - [ ] Add tooltip on the volume landmarks of each page.
 - [ X ] Maybe improve the design of the cards?
 
-- [ ] Add image URL to each muscle group in SQL
-- [ ] Seed the Excercise table with excercises for each muscle group from the RP website.
-- [ ] Improve the chart
+- [ x] Fix the values from RP
+- [ x ] Add image URL to each muscle group in SQL

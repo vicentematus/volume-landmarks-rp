@@ -1,4 +1,5 @@
 import type { GetServerSideProps, GetServerSidePropsContext } from "next";
+import { average } from "@/utils/calculations";
 import { prisma } from "@/server/db/client";
 import {
   Chart as ChartJS,
@@ -86,8 +87,13 @@ const MuscleInfo = ({ muscleGroup }) => {
     labels,
     datasets: [
       {
-        label: "Chest landmarks",
-        data: [MV_MIN, MEV_MIN, MAV_MIN, MRV_MAX],
+        label: `${muscle} volume landmarks`,
+        data: [
+          average(MV_MIN, MV_MAX),
+          average(MEV_MIN, MEV_MAX),
+          average(MAV_MIN, MAV_MAX),
+          average(MRV_MIN, MRV_MAX),
+        ],
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
       },

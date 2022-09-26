@@ -11,20 +11,24 @@ datasource db {
 }
 
 model MuscleGroup {
-    id          Int         @id @default(autoincrement())
-    muscle      String      @unique
-    description String  @default("N/A")
-    MV_MIN      Int
-    MV_MAX      Int
-    MEV_MIN     Int
-    MEV_MAX     Int
-    MAV_MIN     Int
-    MAV_MAX     Int
-    MRV_MIN     Int
-    MRV_MAX     Int
-    frequency   String?
+    id            Int     @id @default(autoincrement())
+    muscle        String  @unique
+    description   String  @default("N/A")
+    MV_MIN        Int
+    MV_MAX        Int
+    MEV_MIN       Int
+    MEV_MAX       Int
+    MAV_MIN       Int
+    MAV_MAX       Int
+    MRV_MIN       Int
+    MRV_MAX       Int
+    frequency_min Int     @default(0)
+    frequency_max Int     @default(0)
+    frequency     String?
+
     article_url String?
     excercises  Excercise[]
+    video       String      @default(NULL)
     images      Image[]
 }
 
