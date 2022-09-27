@@ -1,4 +1,3 @@
-import type { GetServerSideProps, GetServerSidePropsContext } from "next";
 import { average } from "@/utils/calculations";
 import { prisma } from "@/server/db/client";
 import {
@@ -13,6 +12,13 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import VolumeCard from "@/components/volume-landmarks/index";
+import {
+  GetServerSideProps,
+  InferGetServerSidePropsType,
+  NextPage,
+} from "next";
+import { muscleIndividual } from "@/types/muscleGroup";
+import { MuscleGroup } from "@prisma/client";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -25,7 +31,9 @@ ChartJS.register(
 
 const labels = ["MV", "MEV", "MAV", "MRV"];
 
-const MuscleInfo = ({ muscleGroup }) => {
+const MuscleInfo: NextPage<
+  InferGetServerSidePropsType<typeof getServerSideProps>
+> = ({ muscleGroup }) => {
   const {
     MV_MIN,
     MV_MAX,
@@ -115,21 +123,30 @@ const MuscleInfo = ({ muscleGroup }) => {
             <VolumeCard key={landmark.name} muscle={landmark}></VolumeCard>
           ))}
         </ul>
-        <div>
-          <Line data={data} options={options} />
+        <div className="flex">
+          <div className="lg:w-1/2">
+            <Line data={data} options={options} />
+          </div>
+          <div>
+            <h2>Frequency</h2>
+            <p>{frequency} times a week</p>
+          </div>
         </div>
       </div>
     </>
   );
 };
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const { muscle } = context.query;
 
-  console.log("muscle es ", muscle);
-  const muscleGroup = await prisma.muscleGroup.findUnique({
+  const muscleGroup: any = await prisma.muscleGroup.findUnique({
     where: {
       muscle: muscle,
+    },
+    include: {
+      images: true,
+      excercises: true,
     },
   });
 

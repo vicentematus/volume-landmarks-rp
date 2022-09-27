@@ -1,7 +1,7 @@
-import type { NextPage, GetServerSideProps } from "next";
 import Link from "next/link";
 import Image from "next/image";
-const MuscleCard: any = ({ muscle }) => {
+import { muscleIndividual } from "@/types/muscleGroup";
+const MuscleCard: React.FC<{ muscle: muscleIndividual }> = ({ muscle }) => {
   const { images, description } = muscle;
   let url: string = "";
   console.log("muscle es ", muscle);

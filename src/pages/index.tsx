@@ -8,8 +8,13 @@ import type {
 } from "next";
 import Head from "next/head";
 import { prisma } from "../server/db/client";
-
-const Home: any = ({ muscleGroups }) => {
+import { MuscleGroup, Image, Excercise, Prisma } from "@prisma/client";
+import { muscleGroupWithImages, muscleIndividual } from "@/types/muscleGroup";
+const Home: NextPage<{
+  muscleGroups: InferGetServerSidePropsType<typeof getServerSideProps>;
+}> = ({ muscleGroups }) => {
+  console.log(muscleGroups[0]);
+  console.log("El tipo de musclegroup es", typeof muscleGroups);
   return (
     <>
       <Head>
@@ -23,8 +28,8 @@ const Home: any = ({ muscleGroups }) => {
           Reinassance Periodization Volume Landmarks
         </h1>
         <div className="grid grid-cols-12 justify-center items-center gap-4">
-          {muscleGroups.map((muscle) => (
-            <MuscleCard muscle={muscle} />
+          {muscleGroups.map((muscle: muscleIndividual) => (
+            <MuscleCard key={muscle.id} muscle={muscle} />
           ))}
         </div>
       </main>
@@ -32,28 +37,14 @@ const Home: any = ({ muscleGroups }) => {
   );
 };
 
-interface muscleType {
-  id: number;
-  muscle: string;
-  MV_MIN: number;
-  MV_MAX: number;
-  MEV_MIN: number;
-  MEV_MAX: number;
-  MAV_MIN: number;
-  MAV_MAX: number;
-  MRV_MIN: number;
-  MRV_MAX: number;
-  frequency: string;
-  article_url: string;
-  excercises: string[];
-}
-
-export const getServerSideProps = async (context: any) => {
-  const muscleGroups = await prisma.muscleGroup.findMany({
-    include: {
-      images: true,
-    },
-  });
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const muscleGroups: muscleGroupWithImages = await prisma.muscleGroup.findMany(
+    {
+      include: {
+        images: true,
+      },
+    }
+  );
   return {
     props: {
       muscleGroups,

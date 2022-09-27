@@ -1,48 +1,41 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
-    provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
-    provider = "sqlite"
-    url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
 }
 
 model MuscleGroup {
-    id            Int     @id @default(autoincrement())
-    muscle        String  @unique
-    description   String  @default("N/A")
-    MV_MIN        Int
-    MV_MAX        Int
-    MEV_MIN       Int
-    MEV_MAX       Int
-    MAV_MIN       Int
-    MAV_MAX       Int
-    MRV_MIN       Int
-    MRV_MAX       Int
-    frequency_min Int     @default(0)
-    frequency_max Int     @default(0)
-    frequency     String?
-
-    article_url String?
-    excercises  Excercise[]
-    video       String      @default(NULL)
-    images      Image[]
+  id          Int         @id @default(autoincrement())
+  muscle      String      @unique
+  description String      @default("N/A")
+  MV_MIN      Int
+  MV_MAX      Int
+  MEV_MIN     Int
+  MEV_MAX     Int
+  MAV_MIN     Int
+  MAV_MAX     Int
+  MRV_MIN     Int
+  MRV_MAX     Int
+  frequency   String?
+  article_url String?
+  excercises  Excercise[]
+  images      Image[]
 }
 
 model Excercise {
-    id            Int          @id @default(autoincrement())
-    MuscleGroup   MuscleGroup? @relation(fields: [muscleGroupId], references: [id])
-    muscleGroupId Int?
-    name          String
-    url           String
+  id            Int          @id @default(autoincrement())
+  muscleGroupId Int?
+  name          String
+  url           String
+  MuscleGroup   MuscleGroup? @relation(fields: [muscleGroupId], references: [id])
 }
 
 model Image {
-    id            Int          @id @default(autoincrement())
-    MuscleGroup   MuscleGroup? @relation(fields: [muscleGroupId], references: [id])
-    muscleGroupId Int?
-    path          String
+  id            Int          @id @default(autoincrement())
+  muscleGroupId Int?
+  path          String
+  MuscleGroup   MuscleGroup? @relation(fields: [muscleGroupId], references: [id])
 }
