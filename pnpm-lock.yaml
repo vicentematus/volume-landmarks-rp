@@ -2,13 +2,14 @@ lockfileVersion: 5.4
 
 specifiers:
   '@heroicons/react': ^2.0.11
-  '@prisma/client': ^4.3.1
+  '@prisma/client': ^4.4.0
   '@types/node': 18.0.0
   '@types/react': 18.0.14
   '@types/react-dom': 18.0.5
   '@typescript-eslint/eslint-plugin': ^5.33.0
   '@typescript-eslint/parser': ^5.33.0
   autoprefixer: ^10.4.12
+  boring-avatars: ^1.7.0
   chart.js: ^3.9.1
   daisyui: ^2.31.0
   eslint: 8.22.0
@@ -20,6 +21,7 @@ specifiers:
   react: 18.2.0
   react-chartjs-2: ^4.3.1
   react-dom: 18.2.0
+  react-lite-youtube-embed: ^2.3.1
   tailwindcss: ^3.1.8
   ts-node: ^10.9.1
   typescript: 4.7.4
@@ -27,7 +29,8 @@ specifiers:
 
 dependencies:
   '@heroicons/react': 2.0.11_react@18.2.0
-  '@prisma/client': 4.3.1_prisma@4.4.0
+  '@prisma/client': 4.4.0_prisma@4.4.0
+  boring-avatars: 1.7.0
   chart.js: 3.9.1
   daisyui: 2.31.0_2roj5ve2z6s5oxi3qmvnsoboqa
   module-alias: 2.2.2
@@ -35,6 +38,7 @@ dependencies:
   react: 18.2.0
   react-chartjs-2: 4.3.1_2unjvz6v6rskedwoxtmbfw2rje
   react-dom: 18.2.0_react@18.2.0
+  react-lite-youtube-embed: 2.3.1_biqbaboplfbrettd7655fr4n2y
   zod: 3.19.1
 
 devDependencies:
@@ -277,8 +281,8 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
 
-  /@prisma/client/4.3.1_prisma@4.4.0:
-    resolution: {integrity: sha512-FA0/d1VMJNWqzU7WVWTNWJ+lGOLR9JUBnF73GdIPAEVo/6dWk4gHx0EmgeU+SMv4MZoxgOeTBJF2azhg7x0hMw==}
+  /@prisma/client/4.4.0_prisma@4.4.0:
+    resolution: {integrity: sha512-ciKOP246x1xwr04G9ajHlJ4pkmtu9Q6esVyqVBO0QJihaKQIUvbPjClp17IsRJyxqNpFm4ScbOc/s9DUzKHINQ==}
     engines: {node: '>=14.17'}
     requiresBuild: true
     peerDependencies:
@@ -287,12 +291,12 @@ packages:
       prisma:
         optional: true
     dependencies:
-      '@prisma/engines-version': 4.3.0-32.c875e43600dfe042452e0b868f7a48b817b9640b
+      '@prisma/engines-version': 4.4.0-66.f352a33b70356f46311da8b00d83386dd9f145d6
       prisma: 4.4.0
     dev: false
 
-  /@prisma/engines-version/4.3.0-32.c875e43600dfe042452e0b868f7a48b817b9640b:
-    resolution: {integrity: sha512-8yWpXkQRmiSfsi2Wb/ZS5D3RFbeu/btL9Pm/gdF4phB0Lo5KGsDFMxFMgaD64mwED2nHc8ZaEJg/+4Jymb9Znw==}
+  /@prisma/engines-version/4.4.0-66.f352a33b70356f46311da8b00d83386dd9f145d6:
+    resolution: {integrity: sha512-P5v/PuEIJLYXZUZBvOLPqoyCW+m6StNqHdiR6te++gYVODpPdLakks5HVx3JaZIY+LwR02juJWFlwpc9Eog/ug==}
     dev: false
 
   /@prisma/engines/4.4.0:
@@ -630,6 +634,10 @@ packages:
   /binary-extensions/2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
     engines: {node: '>=8'}
+
+  /boring-avatars/1.7.0:
+    resolution: {integrity: sha512-ZNHd8J7C/V0IjQMGQowLJ5rScEFU23WxePigH6rqKcT2Esf0qhYvYxw8s9i3srmlfCnCV00ddBjaoGey1eNOfA==}
+    dev: false
 
   /brace-expansion/1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
@@ -2014,6 +2022,16 @@ packages:
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
+
+  /react-lite-youtube-embed/2.3.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-14YlE6iZPHwqaQqSmwfI614qumdVAICU9PFmk34vcGnOfiixFjaATGkOfUd2TA6pFpVMP8DT2/l9ebu5/aKeag==}
+    peerDependencies:
+      react: '>=16.0.8'
+      react-dom: '>=16.0.8'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}

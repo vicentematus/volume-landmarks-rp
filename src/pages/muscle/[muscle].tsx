@@ -19,6 +19,7 @@ import {
 } from "next";
 import { muscleIndividual } from "@/types/muscleGroup";
 import { MuscleGroup } from "@prisma/client";
+import ExcerciseCard from "@/components/list/excercise-card";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -46,6 +47,7 @@ const MuscleInfo: NextPage<
     muscle,
     frequency,
     article,
+    excercises,
   } = muscleGroup;
   console.log(MRV_MAX);
 
@@ -130,6 +132,14 @@ const MuscleInfo: NextPage<
           <div>
             <h2>Frequency</h2>
             <p>{frequency} times a week</p>
+          </div>
+        </div>
+        <div>
+          <h2>Recommended excercises</h2>
+          <div className="grid grid-cols-12 justify-center lg:grid-cols-4">
+            {excercises.map((excercise: any) => (
+              <ExcerciseCard excercise={excercise} key={excercise.id} />
+            ))}
           </div>
         </div>
       </div>
