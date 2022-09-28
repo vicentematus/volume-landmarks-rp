@@ -26,4 +26,7 @@ export default defineNextConfig({
   typescript: {
     ignoreBuildErrors: true,
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 });
