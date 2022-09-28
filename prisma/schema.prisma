@@ -29,6 +29,7 @@ model Excercise {
   id            Int          @id @default(autoincrement())
   muscleGroupId Int?
   name          String
+  axis          String?
   url           String
   MuscleGroup   MuscleGroup? @relation(fields: [muscleGroupId], references: [id])
 }

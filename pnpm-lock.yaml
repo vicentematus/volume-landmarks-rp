@@ -16,7 +16,7 @@ specifiers:
   module-alias: ^2.2.2
   next: 12.3.1
   postcss: ^8.4.16
-  prisma: ^4.3.1
+  prisma: ^4.4.0
   react: 18.2.0
   react-chartjs-2: ^4.3.1
   react-dom: 18.2.0
@@ -27,7 +27,7 @@ specifiers:
 
 dependencies:
   '@heroicons/react': 2.0.11_react@18.2.0
-  '@prisma/client': 4.3.1_prisma@4.3.1
+  '@prisma/client': 4.3.1_prisma@4.4.0
   chart.js: 3.9.1
   daisyui: 2.31.0_2roj5ve2z6s5oxi3qmvnsoboqa
   module-alias: 2.2.2
@@ -47,8 +47,8 @@ devDependencies:
   eslint: 8.22.0
   eslint-config-next: 12.3.1_4rv7y5c6xz3vfxwhbrcxxi73bq
   postcss: 8.4.16
-  prisma: 4.3.1
-  tailwindcss: 3.1.8_ts-node@10.9.1
+  prisma: 4.4.0
+  tailwindcss: 3.1.8_57znarxsqwmnneadci5z5fd5gu
   ts-node: 10.9.1_qiyc72axg2v44xl4yovan2v55u
   typescript: 4.7.4
 
@@ -277,7 +277,7 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
 
-  /@prisma/client/4.3.1_prisma@4.3.1:
+  /@prisma/client/4.3.1_prisma@4.4.0:
     resolution: {integrity: sha512-FA0/d1VMJNWqzU7WVWTNWJ+lGOLR9JUBnF73GdIPAEVo/6dWk4gHx0EmgeU+SMv4MZoxgOeTBJF2azhg7x0hMw==}
     engines: {node: '>=14.17'}
     requiresBuild: true
@@ -288,15 +288,15 @@ packages:
         optional: true
     dependencies:
       '@prisma/engines-version': 4.3.0-32.c875e43600dfe042452e0b868f7a48b817b9640b
-      prisma: 4.3.1
+      prisma: 4.4.0
     dev: false
 
   /@prisma/engines-version/4.3.0-32.c875e43600dfe042452e0b868f7a48b817b9640b:
     resolution: {integrity: sha512-8yWpXkQRmiSfsi2Wb/ZS5D3RFbeu/btL9Pm/gdF4phB0Lo5KGsDFMxFMgaD64mwED2nHc8ZaEJg/+4Jymb9Znw==}
     dev: false
 
-  /@prisma/engines/4.3.1:
-    resolution: {integrity: sha512-4JF/uMaEDAPdcdZNOrnzE3BvrbGpjgV0FcPT3EVoi6I86fWkloqqxBt+KcK/+fIRR0Pxj66uGR9wVH8U1Y13JA==}
+  /@prisma/engines/4.4.0:
+    resolution: {integrity: sha512-Fpykccxlt9MHrAs/QpPGpI2nOiRxuLA+LiApgA59ibbf24YICZIMWd3SI2YD+q0IAIso0jCGiHhirAIbxK3RyQ==}
     requiresBuild: true
 
   /@rushstack/eslint-patch/1.2.0:
@@ -771,7 +771,7 @@ packages:
       css-selector-tokenizer: 0.8.0
       postcss: 8.4.16
       postcss-js: 4.0.0_postcss@8.4.16
-      tailwindcss: 3.1.8_ts-node@10.9.1
+      tailwindcss: 3.1.8_57znarxsqwmnneadci5z5fd5gu
     transitivePeerDependencies:
       - ts-node
     dev: false
@@ -1963,13 +1963,13 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prisma/4.3.1:
-    resolution: {integrity: sha512-90xo06wtqil76Xsi3mNpc4Js3SdDRR5g4qb9h+4VWY4Y8iImJY6xc3PX+C9xxTSt1lr0Q89A0MLkJjd8ax6KiQ==}
+  /prisma/4.4.0:
+    resolution: {integrity: sha512-l/QKLmLcKJQFuc+X02LyICo0NWTUVaNNZ00jKJBqwDyhwMAhboD1FWwYV50rkH4Wls0RviAJSFzkC2ZrfawpfA==}
     engines: {node: '>=14.17'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@prisma/engines': 4.3.1
+      '@prisma/engines': 4.4.0
 
   /prop-types/15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
@@ -2224,10 +2224,12 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  /tailwindcss/3.1.8_ts-node@10.9.1:
+  /tailwindcss/3.1.8_57znarxsqwmnneadci5z5fd5gu:
     resolution: {integrity: sha512-YSneUCZSFDYMwk+TGq8qYFdCA3yfBRdBlS7txSq0LUmzyeqRe3a8fBQzbz9M3WS/iFT4BNf/nmw9mEzrnSaC0g==}
     engines: {node: '>=12.13.0'}
     hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3
