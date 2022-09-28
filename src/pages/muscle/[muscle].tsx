@@ -125,18 +125,18 @@ const MuscleInfo: NextPage<
             <VolumeCard key={landmark.name} muscle={landmark}></VolumeCard>
           ))}
         </ul>
-        <div className="flex">
-          <div className="lg:w-1/2">
+        <div className="max-w-3xl mx-auto">
+          <div className="">
             <Line data={data} options={options} />
-          </div>
-          <div>
-            <h2>Frequency</h2>
-            <p>{frequency} times a week</p>
           </div>
         </div>
         <div>
+          <h2>Frequency</h2>
+          <p>{frequency} times a week</p>
+        </div>
+        <div>
           <h2>Recommended excercises</h2>
-          <div className="grid grid-cols-12 justify-center lg:grid-cols-4">
+          <div className="grid grid-cols-12 justify-center gap-4">
             {excercises.map((excercise: any) => (
               <ExcerciseCard excercise={excercise} key={excercise.id} />
             ))}

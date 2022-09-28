@@ -1,5 +1,3 @@
-import Table from "@/components/table/Table";
-
 import MuscleCard from "@/components/list/muscle-groups/index";
 import type {
   GetServerSideProps,
@@ -8,7 +6,6 @@ import type {
 } from "next";
 import Head from "next/head";
 import { prisma } from "../server/db/client";
-import { MuscleGroup, Image, Excercise, Prisma } from "@prisma/client";
 import { muscleGroupWithImages, muscleIndividual } from "@/types/muscleGroup";
 const Home: NextPage<{
   muscleGroups: InferGetServerSidePropsType<typeof getServerSideProps>;
@@ -37,7 +34,7 @@ const Home: NextPage<{
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const muscleGroups: muscleGroupWithImages = await prisma.muscleGroup.findMany(
     {
       include: {

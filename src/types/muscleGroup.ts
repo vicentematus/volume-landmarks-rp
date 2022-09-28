@@ -1,5 +1,4 @@
-import { prisma } from "../server/db/client";
-import { MuscleGroup, Image, Excercise, Prisma } from "@prisma/client";
+import { Prisma } from "@prisma/client";
 
 // We are looking at https://www.prisma.io/docs/concepts/components/prisma-client/advanced-type-safety/operating-against-partial-structures-of-model-types
 // For reference.

@@ -1,9 +1,8 @@
-import { BeakerIcon } from "@heroicons/react/24/solid";
-function classNames(...classes) {
+function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-const VolumeCard = ({ muscle }) => {
+const VolumeCard = ({ muscle }: any) => {
   const { name, range, bgColor, legend } = muscle;
   let estimatedSets = <p>{range[0]} sets per week</p>;
   // If MIN and MAX of an estimated volume landmark are equal then render just one value.
