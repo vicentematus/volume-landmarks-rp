@@ -2,11 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { muscleIndividual } from "@/types/muscleGroup";
 const MuscleCard: React.FC<{ muscle: muscleIndividual }> = ({ muscle }) => {
-  const { images, description } = muscle;
+  const { description } = muscle;
   let url: string = "";
   console.log("muscle es ", muscle);
-  if (images[0]) {
-    url = images[0].path;
+  if (muscle?.images) {
+    url = muscle?.images[0].path || "N/A";
   } else {
     url = "https://placeimg.com/400/225/arch";
   }

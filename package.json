@@ -1,6 +1,7 @@
 {
   "name": "volume-landmarks-rp",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,12 +11,13 @@
     "postinstall": "prisma generate"
   },
   "prisma": {
-    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+    "seed": "node prisma/seed.mjs"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.11",
     "@prisma/client": "^4.4.0",
     "boring-avatars": "^1.7.0",
+    "chalk": "^5.0.1",
     "chart.js": "^3.9.1",
     "daisyui": "^2.31.0",
     "module-alias": "^2.2.2",

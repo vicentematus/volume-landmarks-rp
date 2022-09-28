@@ -150,7 +150,7 @@ const MuscleInfo: NextPage<
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { muscle } = context.query;
 
-  const muscleGroup: any = await prisma.muscleGroup.findUnique({
+  const muscleGroup: muscleIndividual = await prisma.muscleGroup.findUnique({
     where: {
       muscle: muscle,
     },

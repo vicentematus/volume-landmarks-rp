@@ -10,6 +10,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.33.0
   autoprefixer: ^10.4.12
   boring-avatars: ^1.7.0
+  chalk: ^5.0.1
   chart.js: ^3.9.1
   daisyui: ^2.31.0
   eslint: 8.22.0
@@ -31,6 +32,7 @@ dependencies:
   '@heroicons/react': 2.0.11_react@18.2.0
   '@prisma/client': 4.4.0_prisma@4.4.0
   boring-avatars: 1.7.0
+  chalk: 5.0.1
   chart.js: 3.9.1
   daisyui: 2.31.0_2roj5ve2z6s5oxi3qmvnsoboqa
   module-alias: 2.2.2
@@ -688,6 +690,11 @@ packages:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
     dev: true
+
+  /chalk/5.0.1:
+    resolution: {integrity: sha512-Fo07WOYGqMfCWHOzSXOt2CxDbC6skS/jO9ynEcmpANMoPrD+W1r1K6Vx7iNm+AQmETU1Xr2t+n8nzkV9t6xh3w==}
+    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+    dev: false
 
   /chart.js/3.9.1:
     resolution: {integrity: sha512-Ro2JbLmvg83gXF5F4sniaQ+lTbSv18E+TIf2cOeiH1Iqd2PGFOtem+DUufMZsCJwFE7ywPOpfXFBwRTGq7dh6w==}
