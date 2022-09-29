@@ -1386,7 +1386,7 @@ const muscleGroups = [
   },
   {
     id: 4,
-    muscle: "Rear/Side Delts",
+    muscle: "Rear - Side Delts",
     description:
       "Dr. Mike Israetel continues the Hypertrophy Guide series with Rear & Side Delts.",
     MV_MIN: 0,

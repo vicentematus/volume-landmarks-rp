@@ -7,6 +7,7 @@ import type {
 import Head from "next/head";
 import { prisma } from "../server/db/client";
 import { muscleGroupWithImages, muscleIndividual } from "@/types/muscleGroup";
+import Hero from "@/components/hero";
 const Home: NextPage<{
   muscleGroups: InferGetServerSidePropsType<typeof getServerSideProps>;
 }> = ({ muscleGroups }) => {
@@ -20,10 +21,8 @@ const Home: NextPage<{
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="container mx-auto flex flex-col items-center justify-center min-h-screen p-4">
-        <h1 className="text-5xl  leading-normal font-extrabold ">
-          Renaissance Periodization Volume Landmarks
-        </h1>
+      <Hero />
+      <main className="container bg-slate-900 mx-auto flex flex-col items-center justify-center min-h-screen p-4">
         <div className="grid grid-cols-12 justify-center items-center gap-4">
           {muscleGroups.map((muscle: muscleIndividual) => (
             <MuscleCard key={muscle.id} muscle={muscle} />
