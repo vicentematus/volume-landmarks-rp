@@ -5,32 +5,55 @@ import { muscleGroups, excercises, images } from "./seed/MuscleGroup.mjs";
 import chalk from "chalk";
 const prisma = new PrismaClient();
 
+// const muscleGroups = {
+//   id: 0,
+//   muscle: "Chest",
+//   description: "Check the volume landmarks for Chest hypertrophy.",
+//   MV_MIN: 4,
+//   MV_MAX: 4,
+//   MEV_MIN: 6,
+//   MEV_MAX: 6,
+//   MAV_MIN: 12,
+//   MAV_MAX: 20,
+//   MRV_MIN: 22,
+//   MRV_MAX: 22,
+//   frequency: "1.5 - 3",
+//   article_url:
+//     "https://renaissanceperiodization.com/chest-training-tips-hypertrophy/",
+// };
+
 async function main() {
-  // console.log(
-  //   chalk.red(
-  //     "Before seeding the database, we are gonna delete all records from all tables."
-  //   )
-  // );
-  // await prisma.muscleGroup.deleteMany();
-  // console.log(chalk.red("Muscle group table deleted."));
-  // await prisma.excercise.deleteMany();
-  //
-  // console.log(chalk.red("Excercise table deleted."));
-  // await prisma.image.deleteMany();
-  //
-  // console.log(chalk.red("Image table deleted"));
-  //
-  // console.log("Muscle groups 1 es", muscleGroups[0]);
-  // for (let muscle of muscleGroups) {
-  //   prisma.muscleGroup.create({ data: muscle });
-  // }
-  //
-  // for (const image of images) {
-  //   console.log(chalk.yellow("Image es", image.path));
-  //   prisma.image.create({ data: image });
-  // }
-  //
-  // console.log(chalk.green("Muscle group table CREATED"));
+  console.log(
+    chalk.red(
+      "Before seeding the database, we are gonna delete all records from all tables."
+    )
+  );
+  await prisma.muscleGroup.deleteMany();
+  console.log(chalk.red("Muscle group table deleted."));
+  await prisma.excercise.deleteMany();
+
+  console.log(chalk.red("Excercise table deleted."));
+  await prisma.image.deleteMany();
+
+  console.log(chalk.red("Image table deleted"));
+
+  await prisma.muscleGroup.createMany({
+    data: muscleGroups,
+  });
+
+  console.log(chalk.green("Muscle group table CREATED"));
+
+  await prisma.image.createMany({
+    data: images,
+  });
+
+  console.log(chalk.green("Images table CREATED"));
+
+  await prisma.excercise.createMany({
+    data: excercises,
+  });
+
+  console.log(chalk.green("Images table CREATED"));
 }
 
 main()

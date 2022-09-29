@@ -2,6 +2,8 @@
 
 This is an app bootstrapped according to the [init.tips](https://init.tips) stack, also known as the T3-Stack.
 
+# PLEASE USE NODE 16.17.0 OR IT WILL CAUSE SEGFAULT ON WSL UBUNTU
+
 # To Do List
 
 - [ ] Seed the Excercise table with excercises for each muscle group from the RP website.
