@@ -22,7 +22,7 @@ const Home: NextPage<{
 
       <main className="container mx-auto flex flex-col items-center justify-center min-h-screen p-4">
         <h1 className="text-5xl  leading-normal font-extrabold ">
-          Reinassance Periodization Volume Landmarks
+          Renaissance Periodization Volume Landmarks
         </h1>
         <div className="grid grid-cols-12 justify-center items-center gap-4">
           {muscleGroups.map((muscle: muscleIndividual) => (
