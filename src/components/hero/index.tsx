@@ -26,17 +26,6 @@ const Hero: React.FC = () => {
         <div className="py-16 sm:px-2 lg:relative lg:py-20 lg:px-0">
           <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-y-16 gap-x-8 px-4 lg:max-w-8xl lg:grid-cols-2 lg:px-8 xl:gap-x-16 xl:px-12">
             <div className="relative z-10 md:text-center lg:text-left">
-              <div className="absolute bottom-full right-full -mr-72 -mb-56 opacity-50">
-                <Image
-                  src={blurCyanImage}
-                  alt=""
-                  layout="fixed"
-                  width={530}
-                  height={530}
-                  unoptimized
-                  priority
-                />
-              </div>
               <div className="relative">
                 <h1 className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
                   Volume Landmarks for Hypertrophy Training
@@ -47,7 +36,10 @@ const Hero: React.FC = () => {
                 </p>
                 <div className="mt-8 flex space-x-4 md:justify-center lg:justify-start">
                   <ButtonLink href="/">Get started</ButtonLink>
-                  <ButtonLink href="/" variant="secondary">
+                  <ButtonLink
+                    href="https://github.com/vicentematus/volume-landmarks-rp/"
+                    variant="secondary"
+                  >
                     View on GitHub
                   </ButtonLink>
                 </div>
