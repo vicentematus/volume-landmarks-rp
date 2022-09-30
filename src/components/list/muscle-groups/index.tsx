@@ -11,11 +11,11 @@ const MuscleCard: React.FC<{ muscle: muscleIndividual }> = ({ muscle }) => {
     url = "https://placeimg.com/400/225/arch";
   }
   return (
-    <div className="col-span-12 md:col-span-4 h-full ">
+    <div className="col-span-12 md:col-span-4 h-full  border-slate-800 border">
       <Link href={`/muscle/${muscle.muscle}`}>
         <a>
           {" "}
-          <div className="card card-compact w-96  hover:shadow-md bg-base-100 shadow-xl h-full">
+          <div className="card card-compact w-96  rounded-lg hover:shadow-md  hover:bg-slate-800  h-full">
             <figure>
               <Image src={url} layout="intrinsic" width="400" height="255" />
             </figure>

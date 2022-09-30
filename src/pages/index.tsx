@@ -24,6 +24,7 @@ const Home: NextPage<{
 
       <Hero />
       <FeatureSection />
+
       <main className="container bg-slate-900 mx-auto flex flex-col items-center justify-center min-h-screen p-4">
         <div className="grid grid-cols-12 justify-center items-center gap-4">
           {muscleGroups.map((muscle: muscleIndividual) => (
