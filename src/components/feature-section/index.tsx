@@ -43,8 +43,8 @@ const features = [
 
 const FeatureSection: React.FC = () => {
   return (
-    <div className="bg-slate-900 overflow-hidden">
-      <div className="relative max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div className="bg-slate-900 overflow-hidden" id="explain">
+      <div className="relative max-w-7xl mx-auto py-12 md:py-20 lg:py-32 px-4 sm:px-6 lg:px-8">
         <div className="relative lg:grid lg:grid-cols-3 lg:gap-x-8">
           <div className="lg:col-span-1">
             <h2 className="inline bg-gradient-to-l from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">

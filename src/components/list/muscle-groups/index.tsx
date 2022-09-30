@@ -20,8 +20,10 @@ const MuscleCard: React.FC<{ muscle: muscleIndividual }> = ({ muscle }) => {
               <Image src={url} layout="intrinsic" width="400" height="255" />
             </figure>
             <div className="card-body">
-              <h2 className="card-title">{muscle.muscle}</h2>
-              <p>{description}</p>
+              <h2 className="text-2xl font-semibold text-slate-100">
+                {muscle.muscle}
+              </h2>
+              <p className="text-slate-300">{description}</p>
             </div>
           </div>
         </a>

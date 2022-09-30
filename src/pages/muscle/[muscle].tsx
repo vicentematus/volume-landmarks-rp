@@ -20,6 +20,7 @@ import {
 import { muscleIndividual } from "@/types/muscleGroup";
 import { MuscleGroup } from "@prisma/client";
 import ExcerciseCard from "@/components/list/excercise-card";
+import ChartSection from "@/components/chart";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -81,38 +82,6 @@ const MuscleInfo: NextPage<
       bgColor: "bg-green-600",
     },
   ];
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: "top" as const,
-      },
-      title: {
-        display: true,
-        text: `${muscle} Line Chart`,
-      },
-    },
-  };
-  const data = {
-    labels,
-    datasets: [
-      {
-        label: `${muscle} volume landmarks`,
-        data: [
-          average(MV_MIN, MV_MAX),
-          average(MEV_MIN, MEV_MAX),
-          average(MAV_MIN, MAV_MAX),
-          average(MRV_MIN, MRV_MAX),
-        ],
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-      },
-    ],
-  };
-  console.log(
-    "La informacion del musculo en el component es MuscleGroup",
-    muscleGroup
-  );
   return (
     <>
       <div className="max-w-5xl mx-auto">
@@ -127,7 +96,7 @@ const MuscleInfo: NextPage<
         </ul>
         <div className="max-w-3xl mx-auto">
           <div className="">
-            <Line data={data} options={options} />
+            <ChartSection muscleGroup={muscleGroup} />
           </div>
         </div>
         <div>

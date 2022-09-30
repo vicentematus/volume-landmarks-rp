@@ -25,7 +25,10 @@ const Home: NextPage<{
       <Hero />
       <FeatureSection />
 
-      <main className="container bg-slate-900 mx-auto flex flex-col items-center justify-center min-h-screen p-4">
+      <main
+        className="container bg-slate-900 mx-auto flex flex-col items-center justify-center min-h-screen p-4"
+        id="muscles"
+      >
         <div className="grid grid-cols-12 justify-center items-center gap-4">
           {muscleGroups.map((muscle: muscleIndividual) => (
             <MuscleCard key={muscle.id} muscle={muscle} />
