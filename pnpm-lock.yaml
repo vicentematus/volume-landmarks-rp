@@ -17,8 +17,10 @@ specifiers:
   daisyui: ^2.31.0
   eslint: 8.22.0
   eslint-config-next: 12.3.1
+  heroicons: ^2.0.11
   module-alias: ^2.2.2
   next: 12.3.1
+  outline: link:@heroicons/react/outline
   postcss: ^8.4.16
   prism-react-renderer: ^1.3.5
   prisma: ^4.4.0
@@ -40,8 +42,10 @@ dependencies:
   chart.js: 3.9.1
   clsx: 1.2.1
   daisyui: 2.31.0_2roj5ve2z6s5oxi3qmvnsoboqa
+  heroicons: 2.0.11
   module-alias: 2.2.2
   next: 12.3.1_biqbaboplfbrettd7655fr4n2y
+  outline: link:@heroicons/react/outline
   prism-react-renderer: 1.3.5_react@18.2.0
   react: 18.2.0
   react-chartjs-2: 4.3.1_2unjvz6v6rskedwoxtmbfw2rje
@@ -1460,6 +1464,10 @@ packages:
     engines: {node: '>= 0.4.0'}
     dependencies:
       function-bind: 1.1.1
+
+  /heroicons/2.0.11:
+    resolution: {integrity: sha512-pjp6xFVNuc7So67RcHD0krrjkvxiUfNh1/48Pvi4SKVeT2qRlunWnKmqCpGpKGpvFl2rQSmkdHFXLVvgR145dg==}
+    dev: false
 
   /ignore/5.2.0:
     resolution: {integrity: sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==}
