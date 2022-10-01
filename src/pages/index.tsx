@@ -25,16 +25,24 @@ const Home: NextPage<{
       <Hero />
       <FeatureSection />
 
-      <main
-        className="container bg-slate-900 mx-auto flex flex-col items-center justify-center min-h-screen p-4"
-        id="muscles"
-      >
-        <div className="grid grid-cols-12 justify-center items-center gap-4">
-          {muscleGroups.map((muscle: muscleIndividual) => (
-            <MuscleCard key={muscle.id} muscle={muscle} />
-          ))}
-        </div>
-      </main>
+      <div className="bg-slate-900">
+        <main
+          className="container bg-slate-900 mx-auto flex flex-col items-center justify-center min-h-screen p-4"
+          id="muscles"
+        >
+          <div>
+            <h2 className="inline bg-gradient-to-l from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
+              Check the guides
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-12 justify-center items-center gap-4 mt-16">
+            {muscleGroups.map((muscle: muscleIndividual) => (
+              <MuscleCard key={muscle.id} muscle={muscle} />
+            ))}
+          </div>
+        </main>
+      </div>
     </>
   );
 };

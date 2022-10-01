@@ -15,10 +15,7 @@ const code = `export default {
   },
 }`;
 
-const tabs = [
-  { name: "cache-advance.config.js", isActive: true },
-  { name: "package.json", isActive: false },
-];
+const tabs = [{ name: "Chest", isActive: true }];
 const Hero: React.FC = () => {
   return (
     <div className="w-full">
@@ -35,7 +32,7 @@ const Hero: React.FC = () => {
                   Periodization Hypertrophy guides.
                 </p>
                 <div className="mt-8 flex space-x-4 md:justify-center lg:justify-start">
-                  <ButtonLink href="/">Get started</ButtonLink>
+                  <ButtonLink href="/#muscles">Get started</ButtonLink>
                   <ButtonLink
                     href="https://github.com/vicentematus/volume-landmarks-rp/"
                     variant="secondary"
@@ -112,51 +109,7 @@ const Hero: React.FC = () => {
                       <div
                         aria-hidden="true"
                         className="select-none border-r border-slate-300/5 pr-4 font-mono text-slate-600"
-                      >
-                        {Array.from({
-                          length: code.split("\n").length,
-                        }).map((_, index) => (
-                          <Fragment key={index}>
-                            {(index + 1).toString().padStart(2, "0")}
-                            <br />
-                          </Fragment>
-                        ))}
-                      </div>
-                      <Highlight
-                        {...defaultProps}
-                        code={code}
-                        language={codeLanguage}
-                        theme={undefined}
-                      >
-                        {({
-                          className,
-                          style,
-                          tokens,
-                          getLineProps,
-                          getTokenProps,
-                        }) => (
-                          <pre
-                            className={clsx(
-                              className,
-                              "flex overflow-x-auto pb-6"
-                            )}
-                            style={style}
-                          >
-                            <code className="px-4">
-                              {tokens.map((line, index) => (
-                                <div key={index} {...getLineProps({ line })}>
-                                  {line.map((token, index) => (
-                                    <span
-                                      key={index}
-                                      {...getTokenProps({ token })}
-                                    />
-                                  ))}
-                                </div>
-                              ))}
-                            </code>
-                          </pre>
-                        )}
-                      </Highlight>
+                      ></div>
                     </div>
                   </div>
                 </div>

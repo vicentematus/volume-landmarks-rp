@@ -2,29 +2,14 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-
+import { navigation } from "@/utils/menu";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
-const navigation = [
-  {
-    name: "Home",
-    href: "/",
-  },
 
-  {
-    name: "What is this?",
-    href: "/#explain",
-  },
-
-  {
-    name: "Muscle groups",
-    href: "/#muscles",
-  },
-];
 export default function Example() {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-slate-900">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">

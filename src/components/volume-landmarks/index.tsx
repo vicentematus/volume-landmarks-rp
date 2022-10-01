@@ -24,12 +24,10 @@ const VolumeCard = ({ muscle }: any) => {
         >
           {name}
         </div>
-        <div className="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md">
+        <div className="flex-1 flex items-center justify-between border-t border-r border-b border-slate-800 rounded-r-md">
           <div className="flex-1 px-4 py-2 text-sm">
-            <p className="text-gray-900 font-medium hover:text-gray-600 text-xs">
-              {legend}
-            </p>
-            <div className="mt-1">{estimatedSets}</div>
+            <p className="text-slate-100 font-medium  text-xs">{legend}</p>
+            <div className="mt-1 text-slate-200">{estimatedSets}</div>
           </div>
         </div>
       </li>{" "}

@@ -13,12 +13,12 @@ const ExcerciseCard = ({ excercise }: any) => {
     <div className="col-span-12 md:col-span-3 ">
       <div className="flex items-center gap-x-2 ">
         <Avatar size={40} variant="pixel" />
-        <p className="font-semibold">{excercise?.name}</p>
+        <p className="font-semibold text-slate-200">{excercise?.name}</p>
       </div>
 
       <div>
         <LiteYouTubeEmbed
-          id={extractVideoID(excercise?.url)}
+          id={String(extractVideoID(excercise?.url))}
           title="What’s new in Material Design for the web (Chrome Dev Summit 2019)"
         />
       </div>

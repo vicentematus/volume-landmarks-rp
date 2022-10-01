@@ -84,31 +84,33 @@ const MuscleInfo: NextPage<
   ];
   return (
     <>
-      <div className="max-w-5xl mx-auto">
-        <h1 className="text-3xl font-semibold text-center">{muscle}</h1>
-        <ul
-          role="list"
-          className="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4"
-        >
-          {landmarks.map((landmark) => (
-            <VolumeCard key={landmark.name} muscle={landmark}></VolumeCard>
-          ))}
-        </ul>
-        <div className="max-w-3xl mx-auto">
-          <div className="">
-            <ChartSection muscleGroup={muscleGroup} />
-          </div>
-        </div>
-        <div>
-          <h2>Frequency</h2>
-          <p>{frequency} times a week</p>
-        </div>
-        <div>
-          <h2>Recommended excercises</h2>
-          <div className="grid grid-cols-12 justify-center gap-4">
-            {excercises.map((excercise: any) => (
-              <ExcerciseCard excercise={excercise} key={excercise.id} />
+      <div className="bg-slate-900">
+        <div className="max-w-5xl mx-auto">
+          <h1 className="text-3xl text-slate-100 font-semibold text-center ">
+            {muscle}
+          </h1>
+          <ul
+            role="list"
+            className="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          >
+            {landmarks.map((landmark) => (
+              <VolumeCard key={landmark.name} muscle={landmark}></VolumeCard>
             ))}
+          </ul>
+          <div className="max-w-3xl mx-auto">
+            <div className="">
+              <ChartSection muscleGroup={muscleGroup} />
+            </div>
+          </div>
+          <div className="mt-16">
+            <h2 className="text-slate-300 text-3xl font-semibold ">
+              Recommended excercises
+            </h2>
+            <div className="grid grid-cols-12 justify-center gap-4 mt-10">
+              {excercises.map((excercise: any) => (
+                <ExcerciseCard excercise={excercise} key={excercise.id} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
