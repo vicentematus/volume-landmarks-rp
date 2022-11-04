@@ -27,6 +27,15 @@ Then install the packages
 pnpm install
 ```
 
+Modify your prisma schema to use SQLITE:
+
+```prisma
+datasource db{
+  provider = "sqlite"
+  url      = "env(DATABASE_URL)"
+}
+```
+
 > Before developing, first you need add the SQLITE path to your enviroment variables. In this case will be `DATABASE_URL=file:./prisma/db.sqlite`.
 
 Run prisma commands with
@@ -67,7 +76,7 @@ Or you just can deploy it on Vercel.
 
 # Work to do
 
-- [ ] Add .env.example for local development.
+- [x] Add .env.example for local development.
 - [x] Seed the Excercise table with excercises for each muscle group from the RP website.
 - [ ] Add more info to each muscle?
 - [ ] Improve the chart
