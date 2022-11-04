@@ -12,7 +12,10 @@ const ExcerciseCard = ({ excercise }: any) => {
   return (
     <div className="col-span-12 md:col-span-3 ">
       <div className="flex items-center gap-x-2 ">
-        <Avatar size={40} variant="pixel" />
+        <div>
+          <Avatar size={40} variant="pixel" />
+        </div>
+
         <p className="font-semibold text-slate-200">{excercise?.name}</p>
       </div>
 
