@@ -52,7 +52,7 @@ pnpm prisma generate
 
 And for development run
 
-```
+```bash
 pnpm run dev
 ```
 
@@ -60,7 +60,13 @@ pnpm run dev
 
 For deploy you need to use a PostgreSQL database provider. In this case i'm using Supabase. Currently there's a prisma seed file on `/prisma/seed.mjs` that fills the database with the correct volume landmarks.
 
-After you modify your .env variables to connect to your db provider you must:
+After you modify your .env variables to connect to your db provider you must modify your prisma schema on `/prisma/schema.prisma` to use PostgreSQL:
+
+```prisma
+provider = "sqlite"
+```
+
+Then run for the first time run migrations
 
 ```
 pnpm prisma migrate
