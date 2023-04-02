@@ -13,8 +13,7 @@ const MuscleCard: React.FC<{ muscle: muscleIndividual }> = ({ muscle }) => {
 		<div className="col-span-12 md:col-span-4 h-full  border-slate-800 border">
 			<Link href={`/muscle/${muscle.muscle}`}>
 				<a>
-					{" "}
-					<div className="card card-compact w-96  rounded-lg hover:shadow-md  hover:bg-slate-800  h-full">
+					<div className="card card-compact w-full  rounded-lg hover:shadow-md  hover:bg-slate-800  h-full">
 						<figure>
 							<Image
 								src={url}

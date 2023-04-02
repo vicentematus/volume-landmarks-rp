@@ -24,7 +24,7 @@ const Home: NextPage<{
 
       <div className="bg-slate-900">
         <main
-          className="container bg-slate-900 mx-auto flex flex-col items-center justify-center min-h-screen p-4"
+          className="max-w-6xl bg-slate-900 mx-auto flex flex-col items-center justify-center min-h-screen p-4"
           id="muscles"
         >
           <div>
