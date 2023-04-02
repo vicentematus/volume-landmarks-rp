@@ -4,10 +4,6 @@ import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
 import { extractVideoID } from "@/utils/excercise";
 const ExcerciseCard = ({ excercise }: any) => {
-  // const closeModal = () => {
-  //   console.log("Estoy cerrando el modal");
-  // };
-
   extractVideoID(excercise?.url);
   return (
     <div className="col-span-12 md:col-span-3 ">

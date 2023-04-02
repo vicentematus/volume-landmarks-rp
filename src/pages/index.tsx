@@ -1,8 +1,7 @@
 import MuscleCard from "@/components/list/muscle-groups/index";
 import type {
-  GetServerSideProps,
   NextPage,
-  InferGetServerSidePropsType,
+  GetStaticProps, InferGetStaticPropsType
 } from "next";
 import Head from "next/head";
 import { prisma } from "../server/db/client";
@@ -10,10 +9,8 @@ import { muscleGroupWithImages, muscleIndividual } from "@/types/muscleGroup";
 import Hero from "@/components/hero";
 import FeatureSection from "@/components/feature-section";
 const Home: NextPage<{
-  muscleGroups: InferGetServerSidePropsType<typeof getServerSideProps>;
-}> = ({ muscleGroups }) => {
-  console.log(muscleGroups[0]);
-  console.log("El tipo de musclegroup es", typeof muscleGroups);
+  muscleGroups: InferGetStaticPropsType<typeof getStaticProps>;
+}> = ({ muscleGroups }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Head>
@@ -47,7 +44,7 @@ const Home: NextPage<{
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const muscleGroups: muscleGroupWithImages = await prisma.muscleGroup.findMany(
     {
       include: {

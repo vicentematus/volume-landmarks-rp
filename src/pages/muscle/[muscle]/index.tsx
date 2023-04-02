@@ -14,8 +14,10 @@ import { Line } from "react-chartjs-2";
 import VolumeCard from "@/components/volume-landmarks/index";
 import {
   GetServerSideProps,
+  GetStaticPaths,
+  GetStaticProps,
   InferGetServerSidePropsType,
-  NextPage,
+  NextPage, InferGetStaticPropsType
 } from "next";
 import { muscleIndividual } from "@/types/muscleGroup";
 import { MuscleGroup } from "@prisma/client";
@@ -34,8 +36,8 @@ ChartJS.register(
 const labels = ["MV", "MEV", "MAV", "MRV"];
 
 const MuscleInfo: NextPage<
-  InferGetServerSidePropsType<typeof getServerSideProps>
-> = ({ muscleGroup }) => {
+  InferGetStaticPropsType<typeof getStaticProps>
+> = ({ muscleGroup }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const {
     MV_MIN,
     MV_MAX,
@@ -50,7 +52,6 @@ const MuscleInfo: NextPage<
     article,
     excercises,
   } = muscleGroup;
-  console.log(MRV_MAX);
 
   const landmarks = [
     {
@@ -118,10 +119,27 @@ const MuscleInfo: NextPage<
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { muscle } = context.query;
 
-  const muscleGroup: muscleIndividual = await prisma.muscleGroup.findUnique({
+export const getStaticPaths: GetStaticPaths = async () => {
+  const muscles = await prisma.muscleGroup.findMany({
+    select: {
+      muscle: true
+    }
+  });
+
+  const paths = muscles.map((muscle) => {
+    return {
+      params: {
+        muscle: muscle.muscle,
+      },
+    };
+  });
+  return { paths, fallback: false };
+}
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { muscle } = context.params as { muscle: string };
+
+  const muscleGroup = await prisma.muscleGroup.findUnique({
     where: {
       muscle: muscle,
     },
@@ -131,7 +149,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     },
   });
 
-  console.log("El musculo encontrado es ", muscleGroup);
 
   return {
     props: {
@@ -139,4 +156,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     },
   };
 };
+
+
 export default MuscleInfo;

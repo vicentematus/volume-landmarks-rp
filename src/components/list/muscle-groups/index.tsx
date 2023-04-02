@@ -3,8 +3,7 @@ import Image from "next/image";
 import { muscleIndividual } from "@/types/muscleGroup";
 const MuscleCard: React.FC<{ muscle: muscleIndividual }> = ({ muscle }) => {
 	const { description } = muscle;
-	let url: string = "";
-	console.log("muscle es ", muscle);
+	let url = "";
 	if (muscle?.images) {
 		url = muscle?.images[0].path || "N/A";
 	} else {
