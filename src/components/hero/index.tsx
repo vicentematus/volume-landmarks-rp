@@ -61,35 +61,7 @@ const Hero = () => {
 								/>
 							</div>
 
-							<div className="relative">
 
-
-								<div className="absolute -top-64 -right-64">
-									<Image
-										src={blurCyanImage}
-										alt=""
-										layout="fixed"
-										width={530}
-										height={530}
-										unoptimized
-										priority
-									/>
-								</div>
-								<div className="absolute -bottom-40 -right-44">
-									<Image
-										src={blurIndigoImage}
-										alt=""
-										layout="fixed"
-										width={567}
-										height={567}
-										unoptimized
-										priority
-									/>
-								</div>
-								<div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-sky-300 via-sky-300/70 to-blue-300 opacity-10 blur-lg" />
-								<div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-sky-300 via-sky-300/70 to-blue-300 opacity-10" />
-
-							</div>
 						</div>
 					</div>
 				</div>
