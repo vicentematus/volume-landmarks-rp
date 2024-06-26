@@ -1,6 +1,6 @@
 # Volume Landmarks from Reinassance Periodization.
 
-[🔗 See deploy online](volume-landmarks-rp-rals.vercel.app)
+[🔗 See deploy online](https://volume-landmarks-rp-rals.vercel.app/)
 
 This hub contains all the information that break down recommended training volumes by muscle group using the [Renaissance Periodization (RP) training volume landmarks concept](https://www.youtube.com/playlist?list=PL1rSl6Pd49ImuKAUkyy37ziG1tB4v8Q77). Thanks for [@hinsley](https://github.com/hinsley) for standarizing the information in [this google sheets](https://docs.google.com/spreadsheets/d/1APqdi1zb1IXX1PxQEZRFgxYkOMAnxZBi6v003Qrp4z8/edit?usp=sharing).
 
